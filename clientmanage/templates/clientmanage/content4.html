@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Your Email Title</title>
+    <style type="text/css">
+        /* General styles */
+        body, table, td, a {
+            -webkit-text-size-adjust: 100%; /* Prevent font scaling */
+            -ms-text-size-adjust: 100%;
+        }
+        table {
+            border-spacing: 0;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        img {
+            border: 0;
+            outline: none;
+            text-decoration: none;
+            display: block;
+            max-width: 100%; 
+            /* max-height: 100%; */
+            height: auto;
+        }
+        .container {
+            max-width: 600px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        .responsive-padding {
+            padding: 20px;
+        }
+        .content {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #555555;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Responsive styles for smaller devices */
+        @media screen and (max-width: 600px) {
+            .container {
+                width: 100% !important;
+                /* height: 100%; */
+            }
+            .responsive-padding {
+                padding: 10px !important;
+            }
+            .content h3 {
+                font-size: 18px !important;
+            }
+            .content p {
+                font-size: 14px !important;
+            }
+        }
+    </style>
+</head>
+<body style="margin: 0; padding: 0; background-color: #f4f4f4;">
+    <table width="100%" cellpadding="0" cellspacing="0" bgcolor="#f4f4f4">
+        <tr>
+            <td align="center">
+                <table class="container" cellpadding="0" cellspacing="0" style="background-color: #ffffff; border: 3px solid #c8a571; padding: 20px;">
+                    <!-- Header with Image -->
+                    <tr>
+                        <td align="center" style="background-color: #c8a571; padding: 10px;">
+                            <img src="cid:embedded_image" alt="Embedded Image" >
+                        </td>
+                    </tr>
+                    <!-- Content Section -->
+                    <tr>
+                        <td class="responsive-padding">
+                            <div class="content">
+                                <h3 style="color: #345C72;">{{ cName }} <br>{{ sirName }} 様</h3>
+                                <h3 style="color: #345C72;">新年あけましておめでとうございます。<br>旧年中は格別のご厚情を賜り、心より御礼申し上げます。<br> 本年もどうぞ宜しくお願いいたします。</h3>
+                                <p>昨年は、M&Aやコンサルティング業務に加え、ソフトウェア開発という新たな分野でのご縁をいただき、大変実りある一年となりました。AI研究やプログラミング言語の学びを深める中で、小規模企業向けの業務ソフトや不動産管理システムなど、いくつかのシステム開発を手掛ける貴重な機会に恵まれました。ちなみに、この年賀状も自動メール配信システムを活用してお送りしております。</p>
+                                <p>さらに本年より、環境への配慮を重視し、年賀状の送付をペーパーレス化するためにメール形式へと変更させていただきます。何卒ご理解を賜りますようお願い申し上げます。</p>
+                                <p>本年も、皆様とのご縁を大切に、より一層の成長と挑戦を続けてまいります。引き続きのご指導ご鞭撻のほど、何卒よろしくお願い申し上げますとともに、皆様のご健勝とご多幸を心よりお祈り申し上げます。</p>
+                                <p>新しい年が皆様にとりまして素晴らしい一年となりますように。<br>本年もどうぞよろしくお願い申し上げます。</p>
+                                <p>ソリトンキャピタルマネジメント株式会社</p>
+                                <p>紺野　兼司</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- Footer -->
+                    <tr>
+                        <td align="center" style="background-color: #b92329; color: #c8a571; padding: 10px; font-size: 12px; font-weight: 600;">
+                            &copy; 2025 Soliton Capital Management Inc. | 
+                            <a href="https://soliton-cm.com" style="color: #c8a571;">soliton-cm.com</a>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

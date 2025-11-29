@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Confirm Email Sending</title>
+</head>
+<body>
+    <h2>Are you sure you want to send the email to ...</h2>
+    <h3>company name : {{ client.companyName }}</h3>
+    <h3>last name    : {{ client.givenName }}</h3>
+    <h3>first name   : {{ client.sirName }}</h3>
+    <h3>email   : {{ client.email }}</h3>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" name="confirm" value="yes">Yes, send the email</button>
+        <a href="{% url 'clientmanage:client_list' %}"><button type="button">Cancel</button></a>
+    </form>
+</body>
+</html>

@@ -22,12 +22,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-l_#2w#9_0w)rph$vrw1&74bt*#z5z2az$*7ttc104p_!08qt4z'
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')  #'django-insecure-l_#2w#9_0w)rph$vrw1&74bt*#z5z2az$*7ttc104p_!08qt4z'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DJANGO_DEBUG', 'False').lower() == 'true'
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS').split(',')
+allowed_hosts = os.environ.get('DJANGO_ALLOWED_HOSTS', '')
+ALLOWED_HOSTS = allowed_hosts.split(',') if allowed_hosts else []
 
 
 # Application definition
@@ -119,6 +121,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = 'static/'
 
 # Default primary key field type
@@ -130,11 +133,11 @@ from email.utils import formataddr
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-EMAIL_HOST = 'mail1028.onamae.ne.jp'
-EMAIL_PORT = 465
-EMAIL_USE_SSL = True
-EMAIL_HOST_USER = 'web@soliton-cm.com'
-EMAIL_HOST_PASSWORD = '!Web2021'
+EMAIL_HOST = os.environ.get('EMAIL_HOST') 
+EMAIL_PORT = os.environ.get('EMAIL_PORT') 
+EMAIL_USE_SSL = os.environ.get('EMAIL_USE_TLS') 
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER') 
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 DEFAULT_FROM_EMAIL = formataddr(('ソリトンキャピタル|紺野', 'web@soliton-cm.com'))
 
 
@@ -158,3 +161,5 @@ LOGGING = {
         },
     },
 }
+
+CSRF_TRUSTED_ORIGINS = os.getenv("CSRF_TRUSTED_ORIGINS", "").split(",")

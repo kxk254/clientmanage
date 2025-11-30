@@ -72,12 +72,12 @@ def email_send(request, pk, pg):
         settings.DEFAULT_FROM_EMAIL = formataddr(('ソリトンキャピタル|紺野', 'web@soliton-cm.com'))
 
         html_content = render_to_string(
-            'clientmanage/content4.html',
+            'clientmanage/content2026.html',
             {'client':client, 'cName':cName, 'sirName':sirName, 'givenName':givenName}
         )
         # Send email notification
         subject = "新年のご挨拶|ソリトンキャピタル"
-        image_path = os.path.join(settings.MEDIA_ROOT, '2025_main.jpg')
+        image_path = os.path.join(settings.MEDIA_ROOT, '2026ny.jpg')
         # image_path = settings.MEDIA_URL + '2025_main.jpg'
 
         if request.GET.get("name") == "test":
@@ -88,7 +88,7 @@ def email_send(request, pk, pg):
                     to=["konno.kenji@gmail.com"],
                     cc=["kkonno@soliton-cm.com"],
                     html_content=html_content,
-                    image_path=image_path,
+                    # image_path=image_path,
                     )
         else:
             send_client_email(
@@ -97,7 +97,7 @@ def email_send(request, pk, pg):
                     to=email_to_send,
                     cc=["kkonno@soliton-cm.com"],
                     html_content=html_content,
-                    image_path=image_path,
+                    # image_path=image_path,
                     )
             print("now passing NORMAL route =======================")
             client.emailSend = True
@@ -121,12 +121,12 @@ def email_send_e(request, pk):
     settings.DEFAULT_FROM_EMAIL = formataddr(('Kenji Konno|SCM', 'web@soliton-cm.com'))
 
     html_content = render_to_string(
-        'clientmanage/content4_eng.html',
+        'clientmanage/content2026_eng.html',
         {'client':client, 'cName':cName, 'sirName':sirName, 'givenName':givenName}
     )
     # Send email notification
     subject = "Happy New Year from SOLITON Capital"
-    image_path = os.path.join(settings.MEDIA_ROOT, '2025_main.jpg')
+    image_path = os.path.join(settings.MEDIA_ROOT, '2026ny.jpg')
     # image_path = settings.MEDIA_URL + '2025_main.jpg'
 
     if request.GET.get("name") == "test":
@@ -137,7 +137,7 @@ def email_send_e(request, pk):
                 to=["konno.kenji@gmail.com"],
                 cc=["kkonno@soliton-cm.com"],
                 html_content=html_content,
-                image_path=image_path,
+                # image_path=image_path,
                 )
     else:
         send_client_email(
@@ -146,7 +146,7 @@ def email_send_e(request, pk):
                 to=email_to_send,
                 cc=["kkonno@soliton-cm.com"],
                 html_content=html_content,
-                image_path=image_path,
+                # image_path=image_path,
                 )
         print("now passing ENG NORMAL route =======================")
         client.emailSend = True

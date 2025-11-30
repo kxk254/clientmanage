@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Your Email Title</title>
+    <style type="text/css">
+        /* General styles */
+        body, table, td, a {
+            -webkit-text-size-adjust: 100%; /* Prevent font scaling */
+            -ms-text-size-adjust: 100%;
+        }
+        table {
+            border-spacing: 0;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        img {
+            border: 0;
+            outline: none;
+            text-decoration: none;
+            display: block;
+            max-width: 100%; 
+            /* max-height: 100%; */
+            height: auto;
+        }
+        .container {
+            max-width: 600px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        .responsive-padding {
+            padding: 20px;
+        }
+        .content {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #555555;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Responsive styles for smaller devices */
+        @media screen and (max-width: 600px) {
+            .container {
+                width: 100% !important;
+                /* height: 100%; */
+            }
+            .responsive-padding {
+                padding: 10px !important;
+            }
+            .content h3 {
+                font-size: 18px !important;
+            }
+            .content p {
+                font-size: 14px !important;
+            }
+        }
+    </style>
+</head>
+<body style="margin: 0; padding: 0; background-color: #f4f4f4;">
+    <table width="100%" cellpadding="0" cellspacing="0" bgcolor="#f4f4f4">
+        <tr>
+            <td align="center">
+                <table class="container" cellpadding="0" cellspacing="0" style="background-color: #ffffff; border: 3px solid #7a4900e1; padding: 20px;">
+                    <!-- Header with Image -->
+                    <tr>
+                        <td align="center" style="background-color: #7e4d04e1; padding: 10px;">
+                            <!-- <img src="cid:embedded_image" alt="Embedded Image" > -->
+                            <!-- <a href="https://soliton-cm.com/newyear/2026ny.jpg" download> -->
+                                <img src="https://soliton-cm.com/newyear/2026ny.jpg" alt="Download Image" style="max-width:100%; height:auto;">
+                            <!-- </a> -->
+                        </td>
+                    </tr>
+                    <!-- Content Section -->
+                    <tr>
+                        <td class="responsive-padding">
+                            <div class="content">
+                                <h3 style="color: #345C72;">{{ cName }} <br>{{ sirName }} 様</h3>
+                                <h3 style="color: #345C72;">新年あけましておめでとうございます。<br>旧年中はひとかたならぬご厚情を賜り、心より御礼申し上げます。</h3>
+                                <p>また、多くの皆様より温かいご支援を賜りましたこと、あらためて深く感謝申し上げます。</p>
+                                <p>本年も皆様のお役に立てるよう一層精進してまいりますので、</p>
+                                <p>変わらぬご愛顧のほど、何卒よろしくお願い申し上げます。</p>
+                                <br>
+                                <h3 style="color: #345C72;">Happy New Year.</h3>
+                                <p>Thank you very much for your support during the past year.</p>
+                                <p>Our company has now entered its sixth year, and we are moving forward step by step.</p>
+                                <p>We hope you have a good holiday season and look forward to working with you in the new year.</p>
+                                <br>
+                                <p>ソリトンキャピタルマネジメント株式会社 | Soliton Capital Management Inc.,</p>
+                                <p>紺野　兼司 | Kenji Konno</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- Footer -->
+                    <tr>
+                        <td align="center" style="background-color: #90bec0; color: #3b2401; padding: 10px; font-size: 12px; font-weight: 600;">
+                            &copy; 2026 Soliton Capital Management Inc. | 
+                            <a href="https://soliton-cm.com" style="color: #3b2401;">soliton-cm.com</a>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -47,10 +47,10 @@ def send_test_email(subject, body, to, html_content=None, image_path=None, cc=No
     email.attach_alternative(html_content, "text/html")
 
     # Attach the inline image
-    with open(image_path, "rb") as img_file:
-        image = MIMEImage(img_file.read())
-        image.add_header("Content-ID", "<embedded_image>")
-        email.attach(image)
+    # with open(image_path, "rb") as img_file:
+    #     image = MIMEImage(img_file.read())
+    #     image.add_header("Content-ID", "<embedded_image>")
+    #     email.attach(image)
 
     # Send the email
     email.send()

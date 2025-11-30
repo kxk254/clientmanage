@@ -6,12 +6,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    # No port mapping here, Nginx will handle external access
-    # Mount a volume to share collected static files with Nginx
     volumes:
-      # This maps the named volume 'static_volume' to a directory
-      # inside the app container.
-      # IMPORTANT: Configure your application (e.g., STATIC_ROOT in Django)
       - static_volume_cm:/clientmanage/staticfiles
       - media_volume_cm:/clientmanage/media
       - db_volume_cm:/clientmanage/db
@@ -31,11 +26,7 @@ services:
       - "8705:80"
     # Mount the custom Nginx configuration file
     volumes:
-      # Mount your local nginx.conf to the default Nginx server block config
       - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
-      # Mount the same shared volume where the app collected static files.
-      # This path (/usr/share/nginx/html/static) should match the 'alias'
-      # path configured in your nginx.conf for the /static/ location.
       - static_volume_cm:/usr/share/nginx/html/static
       - media_volume_cm:/usr/share/nginx/html/media
     # Ensure Nginx starts after the app service
